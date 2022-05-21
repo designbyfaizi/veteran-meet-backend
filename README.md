@@ -24,3 +24,61 @@ Followings are the major stake holders for Veteran-Meet:
 - Public and private sector Educational institutions
 - Public and private organizations
 - NGOs
+
+
+#
+
+## Major Modules:
+VeteranMeet aims to provide a social platform for retired professionals. It consists of **two** modules: <br>
+-  Veteran Module. <br>
+-  Community Module. <br>
+
+### Veteran Module:
+
+This module will consist of the following features: <br>
+**1.** Profile creation. <br>
+**2.** Veterans add their hobbies. <br>
+**3.** Connect with others veterans of same profession. <br>
+**4.** Follow different organizations. <br>
+**5.** Create a new community service event. <br>
+**6.** Invite followers on a community service event. <br>
+**7.** Veterans will use their current location to search the events happening around them. <br>
+**8.** Veterans have an option to join some event virtually by joining live streams. <br>
+**9.** Veterans have ‘stars’ on their profiles. <br>
+**10.** Points are set by the Organization  <br>
+**11.** Events star count can only be set at the time of creation and cannot be edited later. <br>
+**12.** On the basis of star count, Veterans are categorized as <br>
+  - Silver Veteran- with **25,000** stars
+  - Ruby Veteran- with **40,000** stars
+  - Golden Veteran- with **50,000** stars
+  - Diamond Veteran- with **60,000** stars
+  - Sapphire Veteran- with **65,000** stars
+  - Platinum Veteran- with **70,000** stars
+  - Eternal Sage- with **100,000** stars
+
+### Community Modules
+Community module will consist of the following: <br>
+**1.** Create Profile for Organizations. <br>
+**2.** Organization initiates a new community event. <br>
+**3.** Veteran connect with organization who initiate community service event. <br>
+**4.** Organizations can invite Veterans to join their event. <br>
+**5.** Organizations can set stars for their event to attract audience. <br>
+**6.** Events star count can only be set at the time of creation. <br>
+
+
+### Deployment
+- <a href="https://veteran-meet.vercel.app/">Front-End </a>
+- <a href="https://veteran-meet-backend.herokuapp.com/">Back-End </a>
+
+
+### Tools and Tech:
+- <a href="https://www.typescriptlang.org/docs/handbook/react.html"> React Typescript</a> 
+- <a href="https://docs.vite.org/"> Vite </a> 
+- <a href="https://windicss.org/"> Windi CSS </a> 
+- <a href="https://docs.nxlog.co/userguide/integrate/mongodb.html?gclid=Cj0KCQjwm6KUBhC3ARIsACIwxBjdfkgoo8IICRoORw1oEeiW1a8LTeLohUDsYqSDTU5o50PTEmAmcVYaAocdEALw_wcB"> MongoDB </a> 
+- <a href="https://devdocs.io/express/"> Express.js </a> 
+
+### Authors
+- <a href="http://daoud-hussain.com/"> Daoud Hussain </a> 
+- <a href="https://designbyfaizi.me"> Faizan Ullah </a> 
+
