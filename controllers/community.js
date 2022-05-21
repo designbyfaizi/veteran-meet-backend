@@ -109,6 +109,33 @@ exports.postEvent = async (req, res, next) => {
   }
 };
 
+exports.putEditEvent = async (req, res, next) => {
+  try {
+    const { eventId, eventName, eventDescription, date } =
+      req.body;
+    const event = await Event.findById(eventId);
+    if (!event) {
+      return res
+        .status(400)
+        .json({ status: "error", message: "No Event Found!" });
+    }
+    event.eventName = eventName;
+    event.eventDescription = eventDescription;
+    event.date = date;
+
+    await event.save()
+
+    res.json({
+      status: "success",
+      message: "Event Updated successfully!",
+      event,
+    });
+  } catch (err) {
+    console.log(err);
+    res.send(err);
+  }
+};
+
 exports.deleteEvent = async (req, res, next) => {
   try {
     const { eventId } = req.params;
@@ -119,11 +146,10 @@ exports.deleteEvent = async (req, res, next) => {
         .json({ status: "error", message: "No Event Found!" });
     }
     res.json({
-        status: "success",
-        message:"Event deleted successfully!",
-        event
-    })
-
+      status: "success",
+      message: "Event deleted successfully!",
+      event,
+    });
   } catch (err) {
     console.log(err);
     res.send(err);

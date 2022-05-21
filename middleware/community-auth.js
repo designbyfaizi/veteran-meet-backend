@@ -8,8 +8,7 @@ module.exports = (req, res, next) => {
         const token = req.headers.authorization.split(' ')[1];
         const decode = jwt.verify(token, JWT_SECRET);
 
-        req.user = decode;
-        
+        req.community = decode;
         next();
     }
     catch(err){
