@@ -16,6 +16,9 @@ app.use("/community", communityRoutes)
 app.use("/", (req, res, next) => {
     res.send("This is the Home Route")
 })
+app.use("*", (req, res, next) => {
+    res.send({message: "Error"})
+})
 
 mongoose
   .connect(
@@ -24,7 +27,7 @@ mongoose
   )
   .then(() => {
       console.log("Connected to MongoDB")
-    app.listen(8080, () => {
+    app.listen(port, () => {
       console.log(`Server started on PORT: ${port}`);
     });
   })
