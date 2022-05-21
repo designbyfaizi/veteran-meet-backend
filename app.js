@@ -1,11 +1,9 @@
 const express = require("express");
 const { default: mongoose } = require("mongoose");
-require('dotenv').config({path: __dirname + '/.env'})
+require("dotenv").config({ path: __dirname + "/.env" });
 
 const app = express();
 const port = process.env.PORT || 8080;
-
-
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -13,27 +11,59 @@ app.use(express.urlencoded({ extended: false }));
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader(
-      "Access-Control-Allow-Methods",
-      "GET, POST, PUT, PATCH, DELETE"
+    "Access-Control-Allow-Methods",
+    "GET, POST, PUT, PATCH, DELETE"
   );
-  res.setHeader(
-      "Access-Control-Allow-Headers",
-      "Content-Type, Authorization"
-  );
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
   next();
 });
 
 // Routes
 const communityRoutes = require("./routes/community");
 
-app.use("/community", communityRoutes)
+app.use("/community", communityRoutes);
 
 app.use("/", (req, res, next) => {
-    res.send("This is the Home Route")
-})
+  res.json({
+    routes: [
+      {
+        method: "post",
+        route: "https://veteran-meet-backend.herokuapp.com/community/signup",
+      },
+      {
+        method: "post",
+        route: "https://veteran-meet-backend.herokuapp.com/community/login",
+      },
+      {
+        method: "post",
+        route:
+          "https://veteran-meet-backend.herokuapp.com/community/create-event",
+      },
+      {
+        method: "put",
+        route:
+          "https://veteran-meet-backend.herokuapp.com/community/edit-event",
+      },
+      {
+        method: "delete",
+        route:
+          "https://veteran-meet-backend.herokuapp.com/community/delete-event/:eventId",
+      },
+      {
+        method: "get",
+        route: "https://veteran-meet-backend.herokuapp.com/community/events",
+      },
+      {
+        method: "get",
+        route:
+          "https://veteran-meet-backend.herokuapp.com/community/events/:eventId",
+      },
+    ],
+  });
+});
 app.use("*", (req, res, next) => {
-    res.send({message: "Error"})
-})
+  res.send({ message: "Error" });
+});
 
 mongoose
   .connect(
@@ -41,7 +71,7 @@ mongoose
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => {
-      console.log("Connected to MongoDB")
+    console.log("Connected to MongoDB");
     app.listen(port, () => {
       console.log(`Server started on PORT: ${port}`);
     });
